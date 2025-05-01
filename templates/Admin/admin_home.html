@@ -1,0 +1,81 @@
+{% extends 'head.html' %}
+
+{% block hello %}
+<style>
+    table tbody{
+        background-color: var(--scolor);
+    }
+</style>
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <h4 class="ps-2">Users Table</h4>
+    </div>
+    <div class="col-lg-11 mx-auto postouter p-4 my-3">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Password</th>
+                <th scope="col">Delete</th>
+
+              </tr>
+            </thead>
+    {% for i in tuser %}
+            <tbody>
+              <tr>
+                <td>{{i.username}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.role}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.password}}</td>
+                <td class="edit"></a>&nbsp;<a href="/delete-user?username={{i.username}}">delete&nbsp;<i class="fa-solid fa-trash"></i></a></td>
+              </tr>
+            </tbody>
+    {% endfor %}
+    <tbody class="text-center">
+      <tr class="py-4"><td colspan="7" class="edit"><a class="px-5" href="/add-user/">Add&nbsp;<i class="fa-solid fa-pen-to-square"></i></td></tr>
+    </tbody>
+</table>
+</div>
+
+    <div class="col-lg-12">
+        <h4 class="ps-2">Post Table</h4>
+    </div>
+    <div class="col-lg-11 mx-auto postouter p-4 my-3">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Heading</th>
+                <th scope="col">Created_by</th>
+                <th scope="col">Date</th>
+                <th scope="col">Likes</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+              </tr>
+            </thead>
+    {% for i in data %}
+            <tbody>
+              <tr>
+                <td>{{i.pheading}}</td>
+                <td>{{i.pcreated_by}}</td>
+                <td>{{i.pdate}}</td>
+                <td class="edit"><a href=""><i class="fa-solid fa-thumbs-up"></i>&nbsp;{{i.plike.count}}</a></td>
+                <td class="edit"><a href="/edit?id={{i.postid}}">Edit&nbsp;<i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td class="edit"></a>&nbsp;<a href="/delete?id={{i.postid}}">delete&nbsp;<i class="fa-solid fa-trash"></i></a></td>
+              </tr>
+
+            </tbody>
+    {% endfor %}
+    <tbody class="text-center">
+      <tr class="py-4"><td colspan="6" class="edit"><a class="px-5" href="/add/">Add&nbsp;<i class="fa-solid fa-pen-to-square"></i></td></tr>
+    </tbody>
+</table>
+</div>
+</div>
+{% endblock %}

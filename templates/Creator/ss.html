@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+{% block hello %}
+<style>
+    .postdes{
+        height:45px;
+        overflow: hidden;
+    }
+    #more{
+        font-size: 10px;
+        box-sizing: border-box;
+        color: var(--ffcolor);
+    }
+</style>
+<a id="addpost" href="/add/">
+    <span style="color: var(--tcolor);">+</span>
+</a>
+<div id="dash" style="color: white;" class="row">
+    <div class="col-lg-1"> </div>
+    <div class="col-lg-3">Daily Notes : {{daypost}}</div>
+    <div class="col-lg-4">Total Notes : {{tpost}}</div>
+    <div class="col-lg-3"><a class="text-white" href="/add/">Add Note +</a></div>
+    <div class="col-lg-1"></div>
+</div>
+<div class="row my-4">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-9">
+        <form id="search" action="/search/" name="search" method="post">
+            {% csrf_token %}
+            <input type="input" name="search" placeholder="search">
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <div class="col-lg-2" id="sort"><a href="/sort?order=asc">&uarr;</a><a href="/sort?order=desc">&darr;</a></div>
+</div>
+<div class="row">
+</div>
+<div class="row">
+    {% if data %}
+    {% for i in data %}
+    <div class="col-lg-11 mx-auto postouter p-4 mb-4">
+        <div class="row">
+            <div class="col-lg-12 post">
+                <div class="row ">
+                    {% if i.pcreated_by.username == request.session.username%}
+                    <div class="col-lg-8 postitle">{{i.pheading}}<span class="postime">&nbsp;By : {{i.pcreated_by}}</span></div>
+                    <div class="col-lg-2 pt-2 ps-5 postime">{{i.pdate}}&nbsp;{{i.ptime}}</div>
+                    <div class="col-lg-2 m-0 p-0 edit"><a href="/likes?id={{i.postid}}"><i class="fa-solid fa-thumbs-up"></i>&nbsp;{{i.plike.count}}</a>&nbsp;
+                        <a href="/edit?id={{i.postid}}">Edit&nbsp;<i class="fa-solid fa-pen-to-square"></i></a>&nbsp;<a href="/delete?id={{i.postid}}">delete&nbsp;<i class="fa-solid fa-trash"></i></a>  
+                    </div>
+                    {% else %}
+                    <div class="col-lg-9 postitle">{{i.pheading}}&nbsp;<span class="postime">By : {{i.pcreated_by}}</span></div>
+                    <div class="col-lg-2 pt-2 ps-5 postime">{{i.pdate}}&nbsp;{{i.ptime}}</div>
+                    <div class="col-lg-1 m-0 p-0 edit"><a href="/likes?id={{i.postid}}"><i class="fa-solid fa-thumbs-up"></i>&nbsp;{{i.plike.count}}</a>&nbsp;</a>  
+                    </div>
+                    {% endif %}  
+                </div>
+                <div class="row text-white mt-2">
+                    <div class="col-lg-12 postdes">
+                        {{i.pdescription}}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-lg-8"><object alt="hrello" data="../{{i.pfile}}" type="application/pdf" width="800px" height="200px"></object></div>
+                    <div class="col-lg-3 text-center"><image alt="image" src="../{{i.pimage}}" height="200px"/></div>
+                    <div class="col-lg-1 mt-5 pt-5"><a id="more" href="/details?id={{i.postid}}">viewer details...</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+</div>
+{% endblock %}  

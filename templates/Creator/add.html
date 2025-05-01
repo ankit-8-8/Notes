@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block hello %}
+
+<style>
+    *{
+        color: white;
+    }
+    form span{
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--focolor);
+        padding-left: 10px;
+    }
+    input{
+        border: 1px solid var(--focolor);
+        border-radius: 5px;
+    }
+    #heading{
+        border: 1px solid var(--focolor);
+        padding-left:10px;
+        border-radius: 5px;
+        min-height: 50px;   
+        width: 600px;
+        background-color: transparent;
+
+    }
+    form textarea{
+        border: 1px solid var(--focolor);
+        border-radius: 5px;
+        min-height: 200px;
+        width: 600px;
+        background-color: transparent;
+        padding-left: 5px;
+    }
+    #heading:focus,textarea:focus{
+        outline:none;
+    }
+    textarea::placeholder{
+        padding-left:5px;
+        padding-top: 5px;
+    }
+    input::placeholder{
+        padding-left:5px;
+        align-content: center;
+        color: var(--focolor);
+    }
+    button{
+        color: var(--focolor);
+        background-color: transparent;
+        padding: 5px 20px ;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-11"></div>
+    <div class="col-lg-1"><div class="col-lg-1 edit mt-3"><a class="text-white" href="/">Back</a></div></div>
+</div>
+<div class="row mt-5">
+    <div class="col-lg-10 mx-auto">
+          <div class="row">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <span>Heading</span>
+                        </div>
+                        <div class="col-lg-10">
+                            <input required id="heading" class="mb-4" type="text" placeholder="heading" name="heading">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <span>Description</span>
+                        </div>
+                        <div class="col-lg-10">
+                            <textarea class="mb-4" type="text" placeholder="description" name="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <span>Upload pdf</span>
+                        </div>
+                        <div class="col-lg-10">
+                            <input class="mb-4" accept=".pdf"  type="file" placeholder="upload pdf" name="pdf">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <span>Upload image</span>
+                        </div>
+                        <div class="col-lg-10">
+                            <input class="mb-4" accept="image/*" type="file" placeholder="image" name="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-10">
+                            <button type="submit">Add</button>
+                            <a href="/"><button type="button">Back</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 ps-5 mt-5">
+                    
+                </div>
+            </form>
+          </div>
+    </div>
+</div>
+{% endblock %}

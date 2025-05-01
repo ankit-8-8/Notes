@@ -1,0 +1,35 @@
+{% extends 'head.html' %}
+{% load static %}
+{% block hello %}
+<style>
+    .container span{
+        color:rgba(192, 132, 252,1 );
+    }
+</style>
+
+    <div class="container">
+        <div class="row">
+            <div class="text-center fs-3 mt-5 my-3" style="color: var(--scolor);">Login <b style="color:var(--tcolor);">AdminPanel</b></div>
+            <form method="post" action="">
+                {% csrf_token %}
+            <div class="col-sm-6 mx-auto my-sm-5 mt-3 shadow-lg p-5">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-phone"></i></i></span>
+                    <input name="mobile" type="text" class="form-control" placeholder="mobile" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" name="password" class="form-control" placeholder="enter password" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-12 text-center">
+                        <button class="btn text-white" type="submit" style="background-color:var(--tcolor);">login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+
+{% endblock %}

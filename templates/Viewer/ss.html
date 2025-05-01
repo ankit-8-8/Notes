@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block hello %}
+
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-9">
+                <form  id="search" action="/search/" name="search" method="post">
+                    {% csrf_token %}
+                    <input type="input" name="search" placeholder="search">
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+            <div class="col-lg-2" id="sort"><a href="/sort?order=asc">&uarr;</a><a href="/sort?order=desc">&darr;</a></div>
+        </div>
+    </div>
+    {% if data %}
+    {% for i in data %}
+    <div class="col-lg-11 mx-auto postouter p-4 my-3">
+        <div class="row">
+            <div class="col-lg-12 post">
+                <div class="row ">
+                    <div class="col-lg-9 postitle">{{i.pheading}}&nbsp;<span class="postime">By : {{i.pcreated_by}}</span></div>
+                    <div class="col-lg-2 pt-2 postime">{{i.pdate}}&nbsp;{{i.ptime}}</div>
+                    <div class="col-lg-1 m-0 p-0 edit">{% if request.session.role %}<a href="/likes?id={{i.postid}}">{% endif%}<i class="fa-solid fa-thumbs-up"></i>&nbsp;{{i.plike.count}}</a></div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-lg-12 postdes">
+                        {{i.pdescription}}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <iframe class="pdf" src="../{{i.pfile}}" height="300">
+            </iframe>
+                </div>
+                <div class="row"></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block hello%}
+<style>
+/* form span{
+    color:rgba(192, 132, 252,1 ) !important;
+} */
+</style>
+    <!--Start SignUp-->
+
+    <div class="container mt-5" id="hello" >
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-6 mx-auto mb-2 text-center"  >
+                        <h3 class="text-white"></h3>
+                    </div>
+                </div>
+            <form autocomplete="off" method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="row shadow-lg p-5">
+                    <div class="row">
+                        <div class="col-lg-6 text-center fs-2 fw-semibold" style="color: var(--scolor);">Sign Up <span class="mycolor1 fw-semibold fs-2 myshadow">NoTes</span></div>
+                        <div class="col-sm-6">
+                            <label class="ps-2 my-1">Select Role</label>
+                            <div class="input-group flex-nowrap mb-2">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-face-smile"></i></span>
+                                <select required class="form-control" name="role" id="role">
+                                    <option value="viewer">Viewer</option>
+                                    <option value="creator">creator</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="row">
+                        <div class="col-sm-6">
+                            <label class="ps-2 my-1">Name</label>
+                            <div class="input-group flex-nowrap mb-2">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                            <input required type="text" name="name" class="form-control" placeholder="name" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="ps-2 my-1">Username</label>
+                            <div class="input-group flex-nowrap mb-2">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-circle-user"></i></span>
+                            <input required type="text" name="username" class="form-control" placeholder="username" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                        </div>
+                    </div>
+
+                   <div class="row">
+                        <div class="col-sm-6">
+                            <label class="ps-2 my-1">Mobile</label>
+                            <div class="input-group flex-nowrap mb-2">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-phone"></i></i></span>
+                            <input required type="number" name="mobile" class="form-control" placeholder="enter number" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="ps-2 my-1">Email</label>
+                            <div class="input-group flex-nowrap mb-2">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
+                            <input required type="email" name="email" class="form-control" placeholder="email" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                        </div>
+                    </div>
+                   <div class="row">
+                    <div class="col-sm-6">
+                        <label class="ps-2 my-1">Enter Password</label>
+                        <div class="input-group flex-nowrap mb-2">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i>   </span>
+                        <input required type="password" name="passwd" class="form-control" placeholder="enter password" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                        <div class="col-sm-6">
+                            <label class="ps-2 my-1">Confirm password</label>
+                            <div class="input-group flex-nowrap mb-2">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                            <input required type="password" name="passwdconfirm" class="form-control" placeholder="confirm password" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-sm-1 mx-auto">
+                        <input type="submit" value="Signup" class="btn text-white" style="background-color:var(--tcolor);">
+                        </div>
+                    </div>
+            </form>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+      </div>
+    
+      <!--End Signup-->
+
+
+{% endblock %}
