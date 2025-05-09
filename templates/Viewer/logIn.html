@@ -103,31 +103,6 @@
                 </div>
             </form>
 
-
-            <!-- <form id="Creator" method="post" action="" class="in">
-                <h6>Creator</h6>
-                {% csrf_token %}
-                <div class="col-sm-6 mx-auto my-sm-5 mt-3 shadow-lg p-5">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
-                        <input name="name" type="text" class="form-control" placeholder="Username" aria-label="Username"
-                            aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                        <input type="password" name="password" class="form-control" placeholder="enter password"
-                            aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col-lg-12 text-center">
-                            <button class="btn text-white" type="submit"
-                                style="background-color:var(--tcolor);">login</button>
-                        </div>
-                    </div>
-                </div>
-            </form> -->
-
-
             <form id="Adminer" method="post" action="/admin-login/" class="in">
                 {% csrf_token %}
                 <div class="col-sm-6 mx-auto my-sm-5 mt-3 shadow-lg p-5">
@@ -156,41 +131,23 @@
 <script>
     var w = document.getElementById("Adminer");
     var x = document.getElementById("Viewer");
-    // var y = document.getElementById("Creator");
     var z = document.getElementById("btn");
 
     function Creator() {
         w.style.left = "1000px  ";
         x.style.left = "0px";
-        // y.style.left = "0px";
         z.style.left = "110px";
     }
     function Viewer() {
         x.style.left="0px"
         w.style.left = "1000px";
-        // y.style.left = "1000px";
         z.style.left = "0px";
     }
     function Adminer() {
         w.style.left = "0px";
         x.style.left = "1000px";
-        // y.style.left = "1000px";
         z.style.left = "230px";
     }
-    // #Viewer {
-    //     position: absolute;
-    //     left: 0;
-    // }
 
-    // #Creator {
-    //     position: absolute;
-    //     left:2000px;
-    //     /* top: 0; */
-    // }
-
-    // #Adminer {
-    //     position: absolute;
-    //     left: 1000px;
-    // }
 </script>
 {% endblock %}

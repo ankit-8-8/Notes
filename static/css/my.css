@@ -1,0 +1,246 @@
+    *{
+        color: white;
+    }        
+    :root {
+        --fcolor: #1f2937;
+        --scolor: rgba(192, 132, 252,0.5 );
+        --tcolor: #fb7185;
+        --focolor: #9ca3af;
+        --ffcolor: #2dd4bf
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    a{
+        text-decoration: none !important;
+    }
+    .myb1 {
+        background-color: var(--ffcolor);
+    }
+
+    .mycolor1 {
+        color: var(--tcolor);
+    }
+
+    .myshadow {
+        text-shadow: 1px 1px var(--tcolor);
+    }
+    .user,h4{
+        color: var(--ffcolor);
+    }
+    #addpost{
+        color: var(--tcolor) !important;
+        text-decoration: none;
+        height:50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 2px solid var(--tcolor);
+        text-align: center;
+        text-shadow: 1px 1px var(--focolor);
+        font-size: 70px;
+        line-height:32px;
+        font-weight:100;
+        position: fixed;
+        right: 70px;
+        bottom:150px;
+        transition: 0.5s;
+    }
+    #addpost:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    #dash{
+        background-color:var(--focolor);
+        margin-bottom: 20px;
+        padding:5px 10px 5px 10px;
+    }
+    .postouter{
+        box-shadow:0 0 1px var(--focolor);
+    }
+    .post{ 
+        color: white;
+        background-color:rgba(red, green, blue, alpha);
+    }
+    .postitle{
+        color: var(--ffcolor);
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 600;
+    }
+    .postime{
+        font-size:10px;
+        line-height: 10px;
+        color: var(--focolor);
+    }
+    .postdes{
+        font-size: 15px;
+        line-height: 20px;
+        text-align: justify;
+    }
+    .login{
+        font-size:15px;
+        font-weight: 500;
+        padding-top:20px;
+    }
+    .login a{
+        width: 30px;
+        padding: 5px;
+        background-color:rgba(192, 132, 252,0.5 );
+        border-radius:5px;
+    }
+    .login a:hover{
+        background-color:rgba(192, 132, 252,1);
+    }
+    .edit a{
+    color:white;
+    width: 30px;
+    padding: 5px;
+    background-color:rgba(192, 132, 252,0.5 );
+    border-radius:5px;
+}
+.edit a:hover{
+    background-color:rgba(192, 132, 252,1);
+}
+#sort a{
+    color:white;
+    font-weight:bolder;
+    padding: 2px 10px;
+    margin-right: 5px;
+    background-color:rgba(192, 132, 252,0.5 );
+    border-radius:5px;  
+}
+#sort a:hover{
+    background-color:rgba(192, 132, 252,1);
+}
+#search input{
+    width: 300px;
+}
+#search button{
+    padding:3px 15px;
+    border: none;
+    color: white;
+    background-color: var(--scolor);
+    border-radius: 5px;
+    font-weight: 500;
+}
+#search button:hover{
+    background-color:rgba(192, 132, 252,1);
+}
+    form span{
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--focolor);
+        padding-left: 10px;
+    }
+    input{
+        border: 1px solid var(--focolor);
+        border-radius: 5px;
+    }
+    #heading{
+        border: 1px solid var(--focolor);
+        padding-left:10px;
+        border-radius: 5px;
+        min-height: 50px;   
+        width: 600px;
+        background-color: transparent;
+
+    }
+    form textarea{
+        border: 1px solid var(--focolor);
+        border-radius: 5px;
+        min-height: 200px;
+        width: 600px;
+        background-color: transparent;
+        padding-left: 5px;
+    }
+    #heading:focus,textarea:focus{
+        outline:none;
+    }
+    textarea::placeholder{
+        padding-left:5px;
+        padding-top: 5px;
+    }
+    input::placeholder{
+        padding-left:5px;
+        align-content: center;
+        color: var(--focolor);
+    }
+    button{
+        color: var(--focolor);
+        background-color: transparent;
+        padding: 5px 20px ;
+    }
+    .postdes{
+        height:45px;
+        overflow: hidden;
+    }
+    #more{
+        font-size: 10px;
+        box-sizing: border-box;
+        color: var(--ffcolor);
+    }
+    .edit a{
+        color:white;
+        width: 30px;
+        padding: 5px;
+        background-color:rgba(192, 132, 252,0.5 );
+        border-radius:5px;
+    }
+    .edit a:hover{
+        background-color:rgba(192, 132, 252,1);
+    }
+    form span{
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--focolor);
+        padding-left: 10px;
+    }
+    input{
+        border: 1px solid var(--focolor);
+        border-radius: 5px;
+    }
+    #heading{
+        border: 1px solid var(--focolor);
+        padding-left:10px;
+        border-radius: 5px;
+        min-height: 50px;   
+        width: 600px;
+        background-color: transparent;
+
+    }
+    form textarea{
+        border: 1px solid var(--focolor);
+        border-radius: 5px;
+        min-height: 200px;
+        width: 700px;
+        background-color: transparent;
+        padding-left: 5px;
+    }
+    #heading:focus,textarea:focus{
+        outline:none;
+    }
+    textarea::placeholder{
+        padding-left:5px;
+        padding-top: 5px;
+    }
+    input::placeholder{
+        padding-left:5px;
+        align-content: center;
+        color: var(--focolor);
+    }
+    button{
+        color: var(--focolor);
+        background-color: transparent;
+        padding: 5px 20px ;
+    }
+    .postdes{
+        height:45px;
+        overflow: hidden;
+    }
+    #more{
+        font-size: 10px;
+        box-sizing: border-box;
+        color: var(--ffcolor);
+    }
